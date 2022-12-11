@@ -1,0 +1,135 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+// condiciones
+
+/* media query mobile*/
+
+@media screen and (max-width:480px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .contenedor, .contNos, .contenedorIndex {
+        @include query-flex-column;
+        align-items: initial;
+        width: auto;
+        
+
+        header{
+            background-color: $background-header;
+            display: flex;
+            justify-content: space-around;
+            height: 15vh;        
+
+            a{
+                display: flex;
+
+                margin: 0 auto;
+                padding: 0.7rem;
+            }
+
+            nav{
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+
+        main{
+            @include query-flex-column;
+            padding-top: 1rem;
+            
+             
+        }
+
+        section{
+            display: none;
+        }
+
+        footer{
+            display: none;
+        }
+
+        .main-dos{
+            @include query-flex-column;
+            background-color: $background-main;
+        }
+    }
+
+    .contenedorIndex {
+        main {
+            height: 85vh;
+        }
+    }
+    
+}
+
+/* media query tablet */ 
+
+@media screen and (max-width:1024px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .contenedor, .contNos, .contenedorIndex{
+        @include query-flex-column;
+        width: auto;
+
+        header{
+            background-color: $background-header;
+            display: flex;
+            justify-content: space-around;
+            height: auto;
+
+            a{
+                display: flex;
+
+                margin: 0 auto;
+                padding: 0.7rem;
+            }
+
+            nav{
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+
+        main{
+            @include query-flex-column;
+
+            section {
+                position: sticky;
+                bottom: 0;
+            }
+            
+        }
+
+        footer{
+            display: none;
+        }
+
+        .main-dos{
+            @include query-flex-column;
+            background-color: $background-main;
+        }
+    }
+
+    .contenedorIndex {
+        main {
+            height: 83vh;
+
+            section{
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+}
